@@ -8,3 +8,8 @@
 /content/docs/en/projects/kytale.mdx @oglassdev
 /content/docs/en/projects/hyperions.mdx @maemachinebroke
 /content/docs/en/projects/transfer-api.mdx @shailist
+
+# Website
+
+/src/app/\[lang\]/\(home\)/* @ItsNeil17 @okunamayand
+/src/app/components/* @okunamayand
