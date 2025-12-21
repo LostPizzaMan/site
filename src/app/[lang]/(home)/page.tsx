@@ -110,7 +110,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageSquare /> Forum
+                <MessageSquare /> {messages.home.forum}
               </Link>
             </Button>
             <DiscordButton />
