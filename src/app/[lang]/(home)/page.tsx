@@ -12,7 +12,6 @@ import { useParams } from "next/navigation";
 import { useMessages } from "@/lib/hooks/useMessages";
 
 import WulfrumProsthesis from "./(showcaseImages)/wulfrum_prosthesis.png";
-import DragonFlyMount from "./(showcaseImages)/dragonfly_mount.gif";
 import Melodium from "./(showcaseImages)/Melodium.gif";
 import GaleWivern from "./(showcaseImages)/gale_wivern.gif";
 import WulfrumArmor from "./(showcaseImages)/Wulfrum_Armor.gif";
