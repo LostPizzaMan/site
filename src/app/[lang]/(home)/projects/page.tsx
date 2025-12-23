@@ -75,7 +75,8 @@ export default async function ProjectsPage({ params }: { params: { lang: string 
                       src={project.banner}
                       alt={`${project.title} banner`}
                       fill
-                      className="object-cover"
+                      className="absolute inset-0 w-full h-full object-cover scale-110"
+                      unoptimized={true}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   ) : (
