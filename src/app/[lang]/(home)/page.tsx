@@ -345,7 +345,7 @@ export default function HomePage() {
       <div className="mt-auto mb-8 w-full py-8">
         <Marquee className="h-64 w-full">
           <MarqueeFade side="left" className="w-12" />
-          <MarqueeContent speed={100} pauseOnHover autoFill={false}>
+          <MarqueeContent speed={100} autoFill={false}>
             {repeatedItems.map((item, index) => (
               <MarqueeItem key={`${item.title}-${index}`} className="mx-2">
                 <ShowcaseCard item={item} />
