@@ -9,6 +9,10 @@ authors:
 
 Creating a command is easy. You need to extend the `CommandBase` class.
 
+
+## Command Class
+
+
 ```java
 public class ExampleCommand extends CommandBase {
 
@@ -19,6 +23,20 @@ public class ExampleCommand extends CommandBase {
     @Override
     protected void executeSync(@Nonnull CommandContext context) {
         context.sendMessage(Message.raw("Hello from ExampleCommand!"));
+    }
+}
+```
+
+## Registering the Command
+
+To register your command, you need to add it to the command manager in your plugin's main class:
+
+```java
+public class MyPlugin extends JavaPlugin {
+
+    @Override
+    public void setup() {
+        getServer().getCommandManager().registerCommand(new ExampleCommand());
     }
 }
 ```
