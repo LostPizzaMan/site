@@ -1,11 +1,11 @@
 {
-    "title": "Server Plugins",
-    "pages": [
-        "setting-up-env.mdx",
-        "creating-commands.mdx",
-        "creating-events.mdx",
-        "chat-formatting.mdx",
-        "..."
-    ],
-    "icon": "Terminal"
+  "title": "Server Plugins",
+  "pages": [
+    "setting-up-env.mdx",
+    "creating-commands.mdx",
+    "creating-events.mdx",
+    "chat-formatting.mdx",
+    "..."
+  ],
+  "icon": "Terminal"
 }
