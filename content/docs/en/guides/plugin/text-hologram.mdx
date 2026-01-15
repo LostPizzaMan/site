@@ -167,12 +167,12 @@ holder.ensureComponent(Intangible.getComponentType());
 
 This builds an invisible, stationary entity at the player’s position.
 
-| Component             | Purpose                         |
-| --------------------- | ------------------------------- |
-| `ProjectileComponent` | Base entity type                |
-| `TransformComponent`  | Sets where the hologram appears |
-| `UUIDComponent`       | Gives it a unique ID            |
-| `Intangible`          | ---                             |
+| Component             | Purpose                                          |
+| --------------------- | ------------------------------------------------ |
+| `ProjectileComponent` | Provides a valid entity shell                    |
+| `TransformComponent`  | Sets the entity’s position and rotation          |
+| `UUIDComponent`       | Gives the entity a unique identity               |
+| `Intangible`          | Makes the entity non-collidable and unselectable |
 
 The hologram will appear exactly at the player’s position and cannot be interacted with physically.
 
@@ -217,7 +217,7 @@ These final components make the hologram visible and give it its text.
 
 | Component             | Purpose                         |
 | --------------------- | ------------------------------- |
-| `NetworkId`           | Syncs the entity to clients     |
+| `NetworkId`           | Allows the entity to be synced  |
 | `Nameplate`           | The actual hologram text        |
 
 ---
