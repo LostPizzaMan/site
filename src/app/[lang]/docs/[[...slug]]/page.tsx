@@ -14,6 +14,7 @@ import { branch } from "@/git-info.json";
 import { ViewTransition } from "react";
 import Link from "next/link";
 import { ogLanguageBlacklist } from "@/lib/i18n";
+import { Separator } from "@/components/ui/separator";
 
 export default async function Page(
   props: PageProps<"/[lang]/docs/[[...slug]]">,
@@ -33,38 +34,28 @@ export default async function Page(
   const authors = page.data.authors;
 
   return (
-    <DocsPage
-      toc={page.data.toc}
-      tableOfContent={{
-        style: "clerk",
-      }}
-      full={page.data.full}
-      editOnGithub={{
-        owner: "HytaleModding",
-        repo: "site",
-        path: `content/docs/${page.path}`,
-        sha: branch,
-      }}
-    >
-      <ViewTransition name="docs-title">
+    <ViewTransition enter="blur-scale-transition" exit="blur-scale-transition">
+      <DocsPage
+        toc={page.data.toc}
+        tableOfContent={{
+          style: "clerk",
+        }}
+        full={page.data.full}
+        editOnGithub={{
+          owner: "HytaleModding",
+          repo: "site",
+          path: `content/docs/${page.path}`,
+          sha: branch,
+        }}
+      >
         <DocsTitle>{page.data.title}</DocsTitle>
-      </ViewTransition>
-      <ViewTransition name="docs-desc">
-        <DocsDescription>{page.data.description}</DocsDescription>
-      </ViewTransition>
-      <ViewTransition name="docs-body">
-        <DocsBody>
-          <MDX
-            components={getMDXComponents({
-              // this allows you to link to other pages with relative file paths
-              a: createRelativeLink(source, page),
-            })}
-          />
-        </DocsBody>
+        <DocsDescription className="mb-0">
+          {page.data.description}
+        </DocsDescription>
 
         {/* Authors section */}
         {authors && authors.length > 0 && (
-          <div className="text-muted-foreground mt-8 text-sm">
+          <div className="text-muted-foreground mt-4 text-sm">
             {messages.misc.credit}{" "}
             {authors.map((author, index) => (
               <span key={index}>
@@ -86,9 +77,20 @@ export default async function Page(
           </div>
         )}
 
+        <Separator className="mt-4 mb-6" />
+
+        <DocsBody>
+          <MDX
+            components={getMDXComponents({
+              // this allows you to link to other pages with relative file paths
+              a: createRelativeLink(source, page),
+            })}
+          />
+        </DocsBody>
+
         {/* {lastModified && <PageLastUpdate date={lastModified} />} */}
-      </ViewTransition>
-    </DocsPage>
+      </DocsPage>
+    </ViewTransition>
   );
 }
 
