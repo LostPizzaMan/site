@@ -2,7 +2,7 @@ name: Upload Crowdin Sources and Translations
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   upload:
